@@ -1,5 +1,6 @@
 - @post_cells.each do |post_cell|
   = post_cell.show :post_is_the_page_subject => false
+  = post_cell.edit
 
-- if posts.empty?
+- if model.empty?
   %p.alert.alert-info= t("posts.none")

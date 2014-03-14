@@ -1,13 +1,15 @@
 module Unshittyblog
-  class PostCell < Cell::Rails
-    include Cell::Rails::ViewModel
-
+  class PostCell < ViewModelForm
     property :title
     property :body
 
     def show(args)
       @post_is_the_page_subject = args[:post_is_the_page_subject]
 
+      render
+    end
+
+    def edit
       render
     end
 

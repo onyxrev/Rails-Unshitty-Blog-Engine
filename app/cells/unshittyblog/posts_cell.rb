@@ -5,7 +5,7 @@ module Unshittyblog
     property :posts
 
     def show
-      @post_cells = posts.map do |p|
+      @post_cells = model.map do |p|
         cell(Unshittyblog::Post, p)
       end
 

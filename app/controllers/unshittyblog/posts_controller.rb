@@ -16,7 +16,7 @@ module Unshittyblog
     end
 
     def index
-      @posts_cell = cell(Unshittyblog::Posts, :posts => posts)
+      @posts_cell = cell(Unshittyblog::Posts, posts)
     end
 
     def show
