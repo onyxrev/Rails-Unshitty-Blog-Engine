@@ -1,0 +1,13 @@
+<%- if host_user %>
+  <div class="usb-actions">
+    <% unless current_page? @router.post_path(:id => model.slug) %>
+      <%= link_to "View", @router.post_path(:id => model.slug), :class => "usb-view-post" %>
+    <% end %>
+
+    <% unless current_page? @router.edit_post_path(:id => model.slug) %>
+      <%= link_to "Edit", @router.edit_post_path(:id => model.slug), :class => "usb-edit-post" %>
+    <% end %>
+
+    <%= link_to "Delete", @router.post_path(:id => model.slug), :class => "usb-delete-post", :method => :delete, :data => { :confirm => 'Are you sure you want to delete this post?' } %>
+  </div>
+<%- end %>

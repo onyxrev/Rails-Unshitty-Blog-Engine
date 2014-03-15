@@ -21,8 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '5.0.3'
   s.add_dependency 'kaminari', '~> 0.15.0'
   s.add_dependency 'formtastic'
-  s.add_dependency 'haml'
-  s.add_dependency 'haml-rails'
   s.add_dependency 'cells'
 
   s.add_development_dependency "sqlite3"

@@ -1,5 +1,0 @@
-= content_tag post_is_the_page_subject ? :h1 : :h2 do
-  - if post_is_the_page_subject
-    = title
-  - else
-    = link_to title, @router.post_path(:id => model.slug)

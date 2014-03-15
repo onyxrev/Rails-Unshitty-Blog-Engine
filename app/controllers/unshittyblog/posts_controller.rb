@@ -2,35 +2,45 @@ require_dependency "unshittyblog/application_controller"
 
 module Unshittyblog
   class PostsController < ApplicationController
+    # use the host app's layout
+    layout "application"
+
     before_filter :post,       :not  => [ :index ]
-    before_filter :post_cell,  :only => [ :show, :edit ]
+    before_filter :post_cell,  :only => [ :new, :show, :edit ]
     before_filter :posts_cell, :only => [ :index ]
 
     def create
       unless @post.update_attributes(post_params)
         logger.info "post not created with params #{params.inspect} because #{@post.errors.inspect}"
 
-        add_to_flash :alert, t("posts.post_not_created")
+        flash[:alert] = t("posts.not_saved")
         return render :new
       end
+
+      after_post_save
     end
 
     def update
       unless @post.update_attributes(post_params)
         logger.info "unable to update post #{@post.inspect} with params #{post_params.inspect} because #{@post.errors.inspect}"
 
-        add_to_flash :alert, t("posts.post_not_updated")
+        flash[:alert] = t("posts.not_saved")
         return render :edit
       end
+
+      after_post_save
     end
 
     def destroy
       unless @post.destroy
         logger.error "unable to destroy post #{@post.inspect}"
-        add_to_flash :alert, t("posts.post_not_destroyed")
+        flash[:alert] = t("posts.not_destroyed")
 
         return redirect_to post_path(@post)
       end
+
+      flash[:alert] = t("posts.destroyed")
+      return redirect_to posts_path
     end
 
     protected
@@ -53,6 +63,11 @@ module Unshittyblog
 
     def posts_cell
       @posts_cell ||= cell(Unshittyblog::Posts)
+    end
+
+    def after_post_save
+      flash[:info] = t("posts.saved")
+      return redirect_to post_path(:id => @post.slug)
     end
   end
 end
