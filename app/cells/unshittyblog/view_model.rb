@@ -4,7 +4,6 @@ module Unshittyblog
 
     # include all the things so we can get a stupid form to render
     include ActionView::Helpers::FormHelper
-    include Formtastic::Helpers::FormHelper
     include ActionView::Helpers::UrlHelper
     include ActionView::Helpers::FormTagHelper
     include ActionController::RecordIdentifier

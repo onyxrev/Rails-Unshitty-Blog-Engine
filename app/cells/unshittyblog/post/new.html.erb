@@ -1,5 +1,5 @@
 <div class="usb-edit-post">
-  <%= semantic_form_for model, :url => @router.posts_path do |f| %>
+  <%= form_for model, :url => @router.posts_path do |f| %>
     <%= render :partial => "form", :locals => { f: f } %>
   <% end %>
 </div>

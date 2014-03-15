@@ -1,6 +1,13 @@
-<%= f.inputs :name => "Content" do %>
-  <%= f.input :title %>
+<div class="usb-post-field">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
 
-  <%= f.input :body %>
+<div class="usb-post-field">
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+
+<div class="usb-buttons">
   <%= f.submit %>
-<% end %>
+</div>
