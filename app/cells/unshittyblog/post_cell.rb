@@ -1,5 +1,5 @@
 module Unshittyblog
-  class PostCell < ViewModelForm
+  class PostCell < ViewModel
     property :title
     property :body
 

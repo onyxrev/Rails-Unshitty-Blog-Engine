@@ -1,5 +1,5 @@
 module Unshittyblog
-  class ViewModelForm < Cell::Rails
+  class ViewModel < Cell::Rails
     include Cell::Rails::ViewModel
 
     # include all the things so we can get a stupid form to render
@@ -8,6 +8,7 @@ module Unshittyblog
     include ActionView::Helpers::UrlHelper
     include ActionView::Helpers::FormTagHelper
     include ActionController::RecordIdentifier
+    include Unshittyblog::ApplicationHelper
 
     def initialize(*args)
       super(*args)
