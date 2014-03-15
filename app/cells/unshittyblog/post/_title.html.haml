@@ -2,4 +2,4 @@
   - if post_is_the_page_subject
     = title
   - else
-    = link_to title, @router.post_path(model)
+    = link_to title, @router.post_path(:id => model.slug)

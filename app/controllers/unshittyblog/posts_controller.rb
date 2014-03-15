@@ -41,7 +41,7 @@ module Unshittyblog
 
     def post
       if params[:id]
-        @post ||= Post.find(params[:id]) || not_found
+        @post ||= Post.friendly.find(params[:id]) || not_found
       else
         @post ||= Post.new
       end
