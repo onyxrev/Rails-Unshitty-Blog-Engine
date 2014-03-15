@@ -2,7 +2,7 @@
   <%- @post_cells.each do |post_cell| %>
     <%= post_cell.show :post_is_the_page_subject => false %>
     <%- if posts.empty? %>
-      <p class="alert alert-info">
+      <p class="usb-no-posts">
         <%= t("posts.none") %>
       </p>
     <%- end %>
