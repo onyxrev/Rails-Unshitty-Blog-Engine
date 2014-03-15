@@ -17,6 +17,7 @@ module Unshittyblog
         return render :new
       end
 
+      logger.info "post #{@post.inspect} created with params #{params.inspect}"
       after_post_save
     end
 
@@ -28,6 +29,7 @@ module Unshittyblog
         return render :edit
       end
 
+      logger.info "post #{@post.inspect} updated with params #{params.inspect}"
       after_post_save
     end
 
@@ -38,6 +40,8 @@ module Unshittyblog
 
         return redirect_to post_path(@post)
       end
+
+      logger.info "post #{@post.inspect} deleted"
 
       flash[:alert] = t("posts.destroyed")
       return redirect_to posts_path
