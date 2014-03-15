@@ -3,8 +3,8 @@ module Unshittyblog
     property :title
     property :body
 
-    def show(args)
-      @post_is_the_page_subject = args[:post_is_the_page_subject]
+    def show(args = {})
+      @post_is_the_page_subject = args[:post_is_the_page_subject] != false
 
       render
     end
