@@ -14,7 +14,7 @@ module Unshittyblog
     end
 
     def post_title
-      render :partial => "title", :locals => { :title => title, :post_is_the_page_subject => @post_is_the_page_subject }
+      render :partial => "title", :locals => { :model => model, :title => title, :post_is_the_page_subject => @post_is_the_page_subject }
     end
   end
 end
