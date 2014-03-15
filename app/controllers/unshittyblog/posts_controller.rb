@@ -2,9 +2,6 @@ require_dependency "unshittyblog/application_controller"
 
 module Unshittyblog
   class PostsController < ApplicationController
-    # use the host app's layout
-    layout "application"
-
     before_filter :post,       :not  => [ :index ]
     before_filter :post_cell,  :only => [ :new, :show, :edit ]
     before_filter :posts_cell, :only => [ :index ]
