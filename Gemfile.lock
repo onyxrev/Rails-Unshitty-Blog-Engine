@@ -5,6 +5,7 @@ PATH
       acts-as-taggable-on
       cells
       friendly_id (= 5.0.3)
+      kaminari
       paperclip (~> 3.4.1)
       rails (~> 4.0.3)
 
@@ -53,6 +54,9 @@ GEM
       activerecord (>= 4.0.0)
     hike (1.2.3)
     i18n (0.6.9)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)

@@ -15,5 +15,9 @@ module Unshittyblog
     initializer "unshittyblog.date_format" do |app|
       Unshittyblog.date_format ||= "%B %-d, %Y"
     end
+
+    initializer "unshittyblog.pagination_count" do |app|
+      Unshittyblog.pagination_count ||= 10
+    end
   end
 end
