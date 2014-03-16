@@ -1,5 +1,5 @@
 module Unshittyblog
-  class ViewModel < Cell::Rails
+  class ViewModel < BaseCell
     include Cell::Rails::ViewModel
 
     # include all the things so we can get a stupid form to render

@@ -7,5 +7,6 @@ module Unshittyblog
 
   require 'cells'
   require 'unshittyblog/router'
+  require 'unshittyblog/host_user'
   require 'acts-as-taggable-on'
 end

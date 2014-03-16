@@ -1,5 +1,5 @@
 module Unshittyblog
-  class PostsCell < Cell::Rails
+  class PostsCell < BaseCell
     include Cell::Rails::ViewModel
 
     def show
