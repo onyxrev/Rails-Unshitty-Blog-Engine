@@ -2,6 +2,10 @@
   <%= render :partial => "actions", :locals => { :model => model } %>
   <%= post_title %>
 
+  <div class="usb-post-published-at">
+    <%= published_at %>
+  </div>
+
   <div class="usb-post-body">
     <%= body %>
   </div>

@@ -28,5 +28,9 @@ module Unshittyblog
     def tags_cell
       @tags_cell ||= cell(Unshittyblog::Tags, model)
     end
+
+    def published_at
+      model.published_at.strftime(Unshittyblog.date_format)
+    end
   end
 end

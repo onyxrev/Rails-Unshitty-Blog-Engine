@@ -13,4 +13,5 @@ en:
         title: "Title"
         body: "Body"
         tags: "Tags"
+        published_at: "Publication Time"
         
