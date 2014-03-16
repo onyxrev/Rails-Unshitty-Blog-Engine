@@ -1,5 +1,5 @@
-Rails Unshitty Blog Engine
-==========================
+Blogocalypse Blog Engine for Rails
+==================================
 
 *Status: Work in Progress*
 

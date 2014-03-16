@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unshittyblog (0.0.1)
+    blogocalypse (0.0.1)
       acts-as-taggable-on (~> 3.0.2)
       cells (~> 3.10.0)
       dragonfly (~> 1.0.3)
@@ -108,4 +108,4 @@ PLATFORMS
 
 DEPENDENCIES
   sqlite3
-  unshittyblog!
+  blogocalypse!

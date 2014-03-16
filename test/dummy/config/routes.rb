@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Unshittyblog::Engine => "/unshittyblog"
+  mount Blogocalypse::Engine => "/blogocalypse"
 end
