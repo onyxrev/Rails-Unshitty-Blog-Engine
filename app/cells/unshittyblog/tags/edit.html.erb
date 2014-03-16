@@ -1,0 +1,4 @@
+<div class="usb-post-field">
+  <%= @form.label :tag_list %>
+  <%= @form.text_field :tag_list, :value => @form.object.tag_list.join(", ") %>
+</div>

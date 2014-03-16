@@ -1,0 +1,12 @@
+<%- if (model.tags.present?) %>
+  <dl class="usb-post-tag-list">
+    <dt class="usb-post-tag-label">
+      <%= t("tags.tags") %>
+    </dt>
+    <%- model.tag_list.each do |tag| %>
+      <dd class="usb-post-tag">
+        <%= tag %>
+      </dd>
+    <%- end %>
+  </dl>
+<%- end %>

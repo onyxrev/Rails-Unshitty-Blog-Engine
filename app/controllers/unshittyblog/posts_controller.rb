@@ -47,7 +47,7 @@ module Unshittyblog
     protected
 
     def post_params
-      params.require(:post).permit(:title, :body, :published_at)
+      params.require(:post).permit(:title, :body, :published_at, :tag_list)
     end
 
     def post

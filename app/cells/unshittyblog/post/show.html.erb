@@ -5,4 +5,9 @@
   <div class="usb-post-body">
     <%= body %>
   </div>
+
+  <%- if @post_is_the_page_subject %>
+    <%= tags_cell.show %>
+    <%= comments_cell.show %>
+  <%- end %>
 </div>

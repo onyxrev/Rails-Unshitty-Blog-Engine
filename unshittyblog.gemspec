@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.0.3"
   s.add_dependency 'paperclip', '~> 3.4.1'
   s.add_dependency 'friendly_id', '5.0.3'
+  s.add_dependency 'acts-as-taggable-on'
   s.add_dependency 'cells'
 
   s.add_development_dependency "sqlite3"
