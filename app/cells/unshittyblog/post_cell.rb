@@ -30,6 +30,8 @@ module Unshittyblog
     end
 
     def published_at
+      return t("posts.unpublished") unless model.published_at
+
       model.published_at.strftime(Unshittyblog.date_format)
     end
   end

@@ -13,7 +13,16 @@ module Unshittyblog
     protected
 
     def posts
-      @model ||= model || Post.all
+      return @model if @model
+
+      query = Post.all.order(:published_at => :desc)
+
+      # if we've got a user, allow them to see unpublished posts
+      unless host_user
+        query = query.where("published_at IS NOT NULL and published_at >= ?", Time.now)
+      end
+
+      @model ||= model || query
     end
   end
 end

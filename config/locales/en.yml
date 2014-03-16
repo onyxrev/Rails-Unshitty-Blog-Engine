@@ -6,7 +6,8 @@ en:
     saved: "Your post has been saved."
     not_saved: "There are some problems with your post."
     destroyed: "The post has been deleted."
-    not_destroyed: "There was a problem deleting the post."    
+    not_destroyed: "There was a problem deleting the post."
+    unpublished: "Unpublished"
   helpers:
     label:
       post:
