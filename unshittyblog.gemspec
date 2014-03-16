@@ -16,12 +16,13 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.0.3"
-  s.add_dependency 'paperclip', '~> 3.4.1'
-  s.add_dependency 'friendly_id', '5.0.3'
-  s.add_dependency 'kaminari'
-  s.add_dependency 'acts-as-taggable-on'
-  s.add_dependency 'cells'
+  s.add_dependency "rails", "~> 4.0.4"
+  s.add_dependency 'dragonfly', '~> 1.0.3'
+  s.add_dependency 'friendly_id', '~> 5.0.3'
+  s.add_dependency 'kaminari', '~> 0.15.1'
+  s.add_dependency 'acts-as-taggable-on', '~> 3.0.2'
+  s.add_dependency 'cells', '~> 3.10.0'
+  s.add_dependency 'rack-cache'
 
   s.add_development_dependency "sqlite3"
 end
