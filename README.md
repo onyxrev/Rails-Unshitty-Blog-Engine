@@ -16,11 +16,12 @@ One of the major driving factors for me making this is that it's really hard to 
 KISS
 ----
 
-One of the mantras of this project is to keep it simple.  I've had way too many engines conflict betwen kaminari and will_paginate, devise and authlogic, yada and yada.  This blog engine will keep it simple to avoid falling into disrepair and to avoid making your life difficult.
+One of the mantras of this project is to keep it simple and to pull in as few dependencies as possible.
 
-* No pagination.
- * Nobody will complain if they have to see all your posts.  It's a blog.  And if you have a million posts you should be using a different approach altogether.
 * Minimal javascript.
  * Turbolinks is great.
+ * Native HTML5 is great.
 * No css framework at all.
  * Does provide namespaced css classes and IDs for you. You're an adult; you can style your own blog.  It'll be a better fit with your existing app as a result.
+
+If you find the dependencies conflict with your mainline app let me know.  We'll see if we can factor it out somehow.
