@@ -8,6 +8,11 @@ en:
     destroyed: "The post has been deleted."
     not_destroyed: "There was a problem deleting the post."
     unpublished: "Unpublished"
+    images: "Images"
+  images:
+    create: "Upload a new Image"
+    pick: "Pick an Image"
+    none: "There are no images yet."
   helpers:
     label:
       post:

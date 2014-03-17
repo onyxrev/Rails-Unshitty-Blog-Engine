@@ -107,5 +107,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sqlite3
   blogocalypse!
+  sqlite3

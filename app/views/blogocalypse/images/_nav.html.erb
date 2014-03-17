@@ -1,0 +1,9 @@
+<div class="usb-images-nav">
+  <%= link_to "All Images", images_path, :class => "usb-images" %>
+
+  <% if host_user %>
+    <% unless current_page? new_image_path %>
+      <%= link_to "New Image", new_image_path, :class => "usb-new-image" %>
+    <% end %>
+  <% end %>
+</div>

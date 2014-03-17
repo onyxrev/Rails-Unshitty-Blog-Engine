@@ -1,0 +1,8 @@
+<div id="usb_images_page">
+  <%= render :partial => "nav" %>
+  <%= @images_cell.show :page => params[:page] %>
+
+  <div class="usb-pagination">
+    <%= paginate @images_cell.images %>
+  </div>
+</div>

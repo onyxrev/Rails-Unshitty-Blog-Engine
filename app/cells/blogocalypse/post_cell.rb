@@ -29,6 +29,14 @@ module Blogocalypse
       @tags_cell ||= cell(Blogocalypse::Tags, model)
     end
 
+    def images_cell
+      @images_cell ||= cell(Blogocalypse::Images, model.images)
+    end
+
+    def new_image_cell
+      cell(Blogocalypse::Image, model.images.build)
+    end
+
     def published_at
       return t("posts.unpublished") unless model.published_at
 

@@ -1,20 +1,20 @@
-<div class="usb-post-field">
+<div class="usb-post-field usb-form-field">
   <%= f.label :title %>
   <%= f.text_field :title %>
 </div>
 
-<div class="usb-post-field">
+<div class="usb-post-field usb-form-field">
   <%= f.label :body %>
   <%= f.text_area :body %>
 </div>
 
 <%= tags_cell.edit :form => f %>
 
-<div class="usb-post-field">
+<div class="usb-post-field usb-form-field">
   <%= f.label :published_at %>
   <%= f.datetime_local_field :published_at %>
 </div>
 
-<div class="usb-buttons">
+<div class="usb-buttons usb-form-field">
   <%= f.submit %>
 </div>

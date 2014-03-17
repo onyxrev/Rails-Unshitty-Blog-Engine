@@ -47,7 +47,7 @@ module Blogocalypse
     protected
 
     def post_params
-      params.require(:post).permit(:title, :body, :published_at, :tag_list)
+      params.require(:post).permit(:title, :body, :published_at, :tag_list, :images_attributes => [ :image, :alt, :title ])
     end
 
     def post
@@ -68,6 +68,9 @@ module Blogocalypse
 
     def after_post_save
       flash[:info] = t("posts.saved")
+
+      return redirect_to edit_post_path(:id => @post.slug) if params[:return_to] == "edit"
+
       return redirect_to post_path(:id => @post.slug)
     end
   end

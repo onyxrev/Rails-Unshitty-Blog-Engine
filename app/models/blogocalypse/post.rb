@@ -7,5 +7,7 @@ module Blogocalypse
 
     has_many :image_posts
     has_many :images, :through => :image_posts
+
+    accepts_nested_attributes_for :images
   end
 end
