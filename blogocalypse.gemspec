@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts-as-taggable-on', '~> 3.0.2'
   s.add_dependency 'cells', '~> 3.10.0'
   s.add_dependency 'rack-cache'
+  s.add_dependency 'redcarpet', '~>3.1.1'
 
   s.add_development_dependency "sqlite3"
 end

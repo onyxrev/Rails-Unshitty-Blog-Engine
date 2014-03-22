@@ -3,6 +3,13 @@ module Blogocalypse
     property :title
     property :body
 
+    def initialize(*args)
+      super(*args)
+
+      html_renderer = Redcarpet::Render::HTML.new(no_links: true, hard_wrap: true)
+      @markdown = Redcarpet::Markdown.new(html_renderer, extensions = {})
+    end
+
     def new
       render
     end
@@ -16,6 +23,11 @@ module Blogocalypse
     def edit
       render
     end
+
+    def body_as_html
+      @markdown.render(body)
+    end
+
 
     def post_title
       render :partial => "title", :locals => { :model => model, :title => title, :post_is_the_page_subject => @post_is_the_page_subject }

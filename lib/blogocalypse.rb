@@ -11,4 +11,5 @@ module Blogocalypse
   require 'blogocalypse/router'
   require 'blogocalypse/host_user'
   require 'acts-as-taggable-on'
+  require 'redcarpet'
 end
