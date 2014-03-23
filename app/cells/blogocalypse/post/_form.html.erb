@@ -3,9 +3,11 @@
   <%= f.text_field :title %>
 </div>
 
-<div class="usb-post-field usb-form-field">
+<div class="usb-post-field usb-form-field wmd-panel">
   <%= f.label :body %>
-  <%= f.text_area :body %>
+
+  <div id="wmd-button-bar"></div>
+  <%= f.text_area :body, :class => "wmd-input", :id => "wmd-input" %>
 </div>
 
 <%= tags_cell.edit :form => f %>

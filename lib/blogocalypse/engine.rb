@@ -19,5 +19,9 @@ module Blogocalypse
     initializer "blogocalypse.pagination_count" do |app|
       Blogocalypse.pagination_count ||= 10
     end
+
+    initializer "blogocalypse.default_image_size" do |app|
+      Blogocalypse.default_image_size ||= "800x800#"
+    end
   end
 end

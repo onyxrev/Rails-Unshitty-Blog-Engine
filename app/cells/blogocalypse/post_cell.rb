@@ -6,7 +6,7 @@ module Blogocalypse
     def initialize(*args)
       super(*args)
 
-      html_renderer = Redcarpet::Render::HTML.new(no_links: true, hard_wrap: true)
+      html_renderer = Blogocalypse::Markdown.new(no_links: true, hard_wrap: true)
       @markdown = Redcarpet::Markdown.new(html_renderer, extensions = {})
     end
 
