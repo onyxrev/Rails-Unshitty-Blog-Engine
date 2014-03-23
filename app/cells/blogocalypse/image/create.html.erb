@@ -1,6 +1,6 @@
 <h4 class="usb-create-image-header usb-header"><%= t('images.create') %></h4>
 <%= form_for @subject, :url => subject_url do |f| %>
   <%= f.fields_for :images, @subject.images.last do |images_form| %>
-    <%= render :partial => "form", :locals => { :f => images_form } %>
+    <%= render :partial => "form", :locals => { :f => images_form, :subject_url => subject_url } %>
   <% end %>
 <%- end %>

@@ -13,6 +13,7 @@ en:
     create: "Upload a new Image"
     pick: "Pick an Image"
     none: "There are no images yet."
+    upload: "Upload Image"
   helpers:
     label:
       post:

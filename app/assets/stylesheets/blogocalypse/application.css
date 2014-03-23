@@ -11,4 +11,5 @@
  *= require_self
  *= require ./post
  *= require ./editor
+ *= require ./upload
  */

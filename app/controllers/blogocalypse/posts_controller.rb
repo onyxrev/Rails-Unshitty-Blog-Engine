@@ -15,7 +15,7 @@ module Blogocalypse
       end
 
       logger.info "post #{@post.inspect} created with params #{params.inspect}"
-      after_post_save
+      return after_post_save
     end
 
     def update
@@ -27,7 +27,7 @@ module Blogocalypse
       end
 
       logger.info "post #{@post.inspect} updated with params #{params.inspect}"
-      after_post_save
+      return after_post_save
     end
 
     def destroy
@@ -66,11 +66,16 @@ module Blogocalypse
       @posts_cell ||= cell(Blogocalypse::Posts)
     end
 
+    def after_image_upload
+      return render :content_type=>'text/html', :text => cell(Blogocalypse::Image, @post.images.last).pick, :layout => false
+    end
+
     def after_post_save
+      return after_image_upload if post_params[:images_attributes]
+
       flash[:info] = t("posts.saved")
 
       return redirect_to edit_post_path(:id => @post.slug) if params[:return_to] == "edit"
-
       return redirect_to post_path(:id => @post.slug)
     end
   end

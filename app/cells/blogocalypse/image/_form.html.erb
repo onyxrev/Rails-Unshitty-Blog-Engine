@@ -1,20 +1,6 @@
 <div class="usb-image-field usb-form-field">
-  <%- if f.object.image_stored? %>
-    <%= image_tag model.image.thumb('200x200#').url %>
-  <%- end %>
-
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+  <div class="usb-image-uploader">
+    <%= image_tag '/assets/blogocalypse/spinner.gif', :class => "spinner" %>
+    <%= f.file_field :image, :class => "file", :data => { :url => subject_url } %>
+  </div>
 </div>
-
-<div class="usb-image-field usb-form-field">
-  <%= f.label :alt %>
-  <%= f.text_field :alt %>
-</div>
-
-<div class="usb-image-field usb-form-field">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
-
-<%= f.submit %>

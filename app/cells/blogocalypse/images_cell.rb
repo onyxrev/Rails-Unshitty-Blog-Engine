@@ -5,7 +5,7 @@ module Blogocalypse
     end
 
     def image_cells
-       persisted_images.map do |i|
+      persisted_images.map do |i|
         cell(Blogocalypse::Image, i)
       end
     end
@@ -13,7 +13,7 @@ module Blogocalypse
     private
 
     def persisted_images
-      model.select{ |i| i.persisted? }
+      model.order(:id => :desc).select{ |i| i.persisted? }
     end
   end
 end
