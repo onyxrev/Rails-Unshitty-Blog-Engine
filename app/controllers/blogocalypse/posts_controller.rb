@@ -47,7 +47,7 @@ module Blogocalypse
     protected
 
     def post_params
-      params.require(:post).permit(:title, :body, :published_at, :tag_list, :images_attributes => [ :image, :alt, :title ])
+      params.require(:post).permit(:title, :body, :published_at, :tag_list, :should_recreate_slug, :images_attributes => [ :image, :alt, :title ])
     end
 
     def post

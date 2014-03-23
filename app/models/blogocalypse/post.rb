@@ -12,7 +12,19 @@ module Blogocalypse
 
     before_save :associate_images_from_body_markup
 
+    attr_accessor :should_recreate_slug
+
     private
+
+    def should_generate_new_friendly_id?
+      self.slug.blank? or ActiveRecord::ConnectionAdapters::Column.value_to_boolean(self.should_recreate_slug)
+    end
+
+    def initialize(*args)
+      super(*args)
+
+      self.title = "Untitled Post" if self.title.blank?
+    end
 
     def associate_images_from_body_markup
       image_ids = body.scan(/image_id\:([0-9]*)/).flatten.map(&:to_i)
