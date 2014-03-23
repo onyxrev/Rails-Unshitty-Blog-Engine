@@ -1,0 +1,4 @@
+<h4 class="usb-create-image-header usb-header"><%= t('images.create') %></h4>
+<%= form_for @image, :url => @router.images_path do |f| %>
+  <%= render :partial => "form", :locals => { :f => f, :path => @router.images_path } %>
+<%- end %>

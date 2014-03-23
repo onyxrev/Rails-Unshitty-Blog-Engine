@@ -5,12 +5,10 @@
     <%= render :partial => "form", :locals => { f: f } %>
   <% end %>
 
-  <a href="javascript://" data-usb-fullscreen="#usb_post_image_picker"><%= t('posts.images') %></a>
-
   <div id="usb_post_image_picker" class="usb-fullscreen closed">
     <a href="javascript://" class="usb-fullscreen-close">Close</a>
 
-    <%= new_image_cell.create :subject => model %>
+    <%= new_image_cell.new %>
     <%= images_cell.pick %>
   </div>
 </div>

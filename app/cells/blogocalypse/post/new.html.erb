@@ -2,4 +2,11 @@
   <%= form_for model, :url => @router.posts_path do |f| %>
     <%= render :partial => "form", :locals => { f: f } %>
   <% end %>
+
+  <div id="usb_post_image_picker" class="usb-fullscreen closed">
+    <a href="javascript://" class="usb-fullscreen-close">Close</a>
+
+    <%= new_image_cell.new %>
+    <%= images_cell.pick %>
+  </div>
 </div>

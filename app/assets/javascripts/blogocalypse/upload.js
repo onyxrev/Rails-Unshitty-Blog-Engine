@@ -10,12 +10,6 @@ Blogocalypse.upload = function(el){
     this.bindings();
 };
 
-Blogocalypse.upload.attach = function(){
-    jQuery(".usb-image-uploader").each(function(){
-        new Blogocalypse.upload(this);
-    });
-};
-
 jQuery.extend(Blogocalypse.upload.prototype, {
     bindings: function(){
         this.$element.find(".file").click();
@@ -39,6 +33,3 @@ jQuery.extend(Blogocalypse.upload.prototype, {
         jQuery(".usb-images-pick").prepend(html);
     }
 });
-
-jQuery(document).ready(Blogocalypse.upload.attach);
-jQuery(document).on('page:load', Blogocalypse.upload.attach);

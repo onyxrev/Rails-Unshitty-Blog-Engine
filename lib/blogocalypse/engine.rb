@@ -21,7 +21,7 @@ module Blogocalypse
     end
 
     initializer "blogocalypse.default_image_size" do |app|
-      Blogocalypse.default_image_size ||= "800x800#"
+      Blogocalypse.default_image_size ||= "1170x1170#"
     end
   end
 end

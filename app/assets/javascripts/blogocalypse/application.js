@@ -3,6 +3,7 @@
 //= require ./jquery.iframe-transport
 //= require ./jquery.fileupload
 //= require ./upload
+//= require ./image_picker
 //= require ./fullscreen
 //= require ./Markdown.Converter
 //= require ./Markdown.Editor

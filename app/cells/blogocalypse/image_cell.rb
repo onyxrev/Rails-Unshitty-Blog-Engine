@@ -10,20 +10,9 @@ module Blogocalypse
       render
     end
 
-    def create(args = {})
-      return unless @subject = args[:subject]
-
+    def new
+      @image = Blogocalypse::Image.new
       render
-    end
-
-    def subject_url
-      @router.send("#{subject_model_name}_path", { :id => @subject.slug, :return_to => :edit })
-    end
-
-    def subject_model_name
-      return unless @subject
-
-      @subject.class.name.gsub("Blogocalypse::", "").downcase
     end
   end
 end
