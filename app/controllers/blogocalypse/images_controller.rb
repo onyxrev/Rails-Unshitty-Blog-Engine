@@ -3,6 +3,7 @@ require_dependency "blogocalypse/application_controller"
 module Blogocalypse
   class ImagesController < ApplicationController
     before_filter :image
+    before_filter :authorize!
 
     def create
       unless @image.update_attributes(image_params)
@@ -40,11 +41,8 @@ module Blogocalypse
       end
     end
 
-    def permissions
-      action      = params[:action].to_sym
-      crud_action = Blogocalypse.action_to_crud_map[action]
-
-      access_denied unless Blogocalypse.can.call host_user, crud_action, @image, Image
+    def authorize!
+      check_permissions @image, Image
     end
   end
 end

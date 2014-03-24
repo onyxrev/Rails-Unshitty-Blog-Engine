@@ -4,7 +4,7 @@ module Blogocalypse
   class PostsController < ApplicationController
     before_filter :post, :except => [ :index ]
 
-    before_filter :permissions
+    before_filter :authorize!
 
     before_filter :posts,      :only => [ :index ]
     before_filter :post_cell,  :only => [ :new, :show, :edit ]
@@ -95,11 +95,8 @@ module Blogocalypse
       return redirect_to post_path(:id => @post.slug)
     end
 
-    def permissions
-      action      = params[:action].to_sym
-      crud_action = Blogocalypse.action_to_crud_map[action]
-
-      access_denied unless Blogocalypse.can.call host_user, crud_action, @post, Post
+    def authorize!
+      check_permissions @post, Post
     end
   end
 end
