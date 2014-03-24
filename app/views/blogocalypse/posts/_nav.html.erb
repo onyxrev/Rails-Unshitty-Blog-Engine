@@ -1,7 +1,7 @@
 <div class="usb-posts-nav">
   <%= link_to "All Posts", posts_path, :class => "usb-posts" %>
 
-  <% if host_user %>
+  <% if can_create_post? %>
     <% unless current_page? new_post_path %>
       <%= link_to "New Post", new_post_path, :class => "usb-new-post" %>
     <% end %>

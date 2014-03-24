@@ -2,7 +2,11 @@ require_dependency "blogocalypse/application_controller"
 
 module Blogocalypse
   class PostsController < ApplicationController
-    before_filter :post,       :not  => [ :index ]
+    before_filter :post, :except => [ :index ]
+
+    before_filter :permissions
+
+    before_filter :posts,      :only => [ :index ]
     before_filter :post_cell,  :only => [ :new, :show, :edit ]
     before_filter :posts_cell, :only => [ :index ]
 
@@ -58,12 +62,24 @@ module Blogocalypse
       end
     end
 
+    def posts
+      return @posts if @posts
+
+      query = Post.all.order(:published_at => :desc).page(params[:page]).per(Blogocalypse.pagination_count)
+
+      unless Blogocalypse.can.call host_user, :manage, Post
+        query = query.where("published_at IS NOT NULL and published_at <= ?", Time.now)
+      end
+
+      @posts = query
+    end
+
     def post_cell
       @post_cell ||= cell(Blogocalypse::Post, post)
     end
 
     def posts_cell
-      @posts_cell ||= cell(Blogocalypse::Posts)
+      @posts_cell ||= cell(Blogocalypse::Posts, posts)
     end
 
     def after_image_upload
@@ -77,6 +93,13 @@ module Blogocalypse
 
       return redirect_to edit_post_path(:id => @post.slug) if params[:return_to] == "edit"
       return redirect_to post_path(:id => @post.slug)
+    end
+
+    def permissions
+      action      = params[:action].to_sym
+      crud_action = Blogocalypse.action_to_crud_map[action]
+
+      access_denied unless Blogocalypse.can.call host_user, crud_action, @post, Post
     end
   end
 end

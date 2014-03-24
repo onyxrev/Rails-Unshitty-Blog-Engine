@@ -39,5 +39,12 @@ module Blogocalypse
         @image ||= Image.new
       end
     end
+
+    def permissions
+      action      = params[:action].to_sym
+      crud_action = Blogocalypse.action_to_crud_map[action]
+
+      access_denied unless Blogocalypse.can.call host_user, crud_action, @image, Image
+    end
   end
 end

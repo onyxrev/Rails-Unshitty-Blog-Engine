@@ -23,5 +23,21 @@ module Blogocalypse
     initializer "blogocalypse.default_image_size" do |app|
       Blogocalypse.default_image_size ||= "1170x1170#"
     end
+
+    initializer "blogocalypse.can?" do |app|
+      Blogocalypse.can ||= Proc.new { |user, resource, action, model| false }
+    end
+
+    initializer "blogocalypse.action_to_crud_map" do |app|
+      Blogocalypse.action_to_crud_map = {
+        :new     => :create,
+        :create  => :create,
+        :show    => :read,
+        :index   => :read,
+        :edit    => :update,
+        :update  => :update,
+        :destroy => :destroy
+      }
+    end
   end
 end

@@ -1,5 +1,5 @@
 Blogocalypse::Engine.routes.draw do
   root "home#index"
   resources :posts
-  resources :images
+  resources :images, :only => [ :create, :destroy ]
 end

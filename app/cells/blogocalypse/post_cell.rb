@@ -1,5 +1,7 @@
 module Blogocalypse
   class PostCell < ViewModel
+    include Blogocalypse::PostHelper
+
     property :title
     property :body
 
@@ -27,7 +29,6 @@ module Blogocalypse
     def body_as_html
       @markdown.render(body)
     end
-
 
     def post_title
       render :partial => "title", :locals => { :model => model, :title => title, :post_is_the_page_subject => @post_is_the_page_subject }

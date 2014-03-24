@@ -1,9 +1,7 @@
 module Blogocalypse
   module PostHelper
-    def post_title
-      tag = @posts.blank? ? "h1" : "h2"
-
-      render :partial => "_title", :locals => { :tag => tag, :title => @post.title }
+    def can_create_post?
+      Blogocalypse.can.call host_user, :create, @post, Post
     end
   end
 end
