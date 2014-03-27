@@ -13,6 +13,7 @@ module Blogocalypse
   require 'kaminari'
   require 'acts-as-taggable-on'
   require 'redcarpet'
+  require 'friendly_id'
   require 'blogocalypse/router'
   require 'blogocalypse/host_user'
   require 'blogocalypse/markdown'

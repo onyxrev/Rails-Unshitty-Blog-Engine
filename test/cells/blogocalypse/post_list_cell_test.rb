@@ -1,10 +1,7 @@
 require 'test_helper'
 
-class PostListCellTest < Cell::TestCase
+class PostsCellTest < Cell::TestCase
   test "show" do
-    invoke :show
-    assert_select "p"
-  end
-  
 
+  end
 end

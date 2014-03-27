@@ -8,8 +8,8 @@ module Blogocalypse
     def initialize(*args)
       super(*args)
 
-      html_renderer = Blogocalypse::Markdown.new(no_links: true, hard_wrap: true)
-      @markdown = Redcarpet::Markdown.new(html_renderer, extensions = {})
+      html_renderer = Blogocalypse::Markdown.new(:no_links => true, :hard_wrap => true)
+      @markdown = Redcarpet::Markdown.new(html_renderer)
     end
 
     def new
@@ -31,7 +31,12 @@ module Blogocalypse
     end
 
     def post_title
-      render :partial => "title", :locals => { :model => model, :title => title, :post_is_the_page_subject => @post_is_the_page_subject }
+      render :partial => "title",
+             :locals => {
+               :model => model,
+               :title => title,
+               :post_is_the_page_subject => @post_is_the_page_subject
+             }
     end
 
     def comments_cell
