@@ -6,11 +6,13 @@ describe "Posts Cell" do
     @posts_cell = cell(Blogocalypse::Posts, @posts)
   end
 
-  it "it creates an instance variable list of post cells for each of its post models" do
-    post_cells = @posts_cell.instance_variable_get(:@post_cells)
+  describe "#post_cells" do
+    it "it creates a list of post cells for each of its post models" do
+      post_cells = @posts_cell.post_cells
 
-    post_cells[0].model.should == @posts[0]
-    post_cells[1].model.should == @posts[1]
+      post_cells[0].model.should == @posts[0]
+      post_cells[1].model.should == @posts[1]
+    end
   end
 
   describe "#posts" do

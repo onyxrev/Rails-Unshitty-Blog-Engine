@@ -1,5 +1,5 @@
 <div class="usb-posts-list">
-  <%- @post_cells.each do |post_cell| %>
+  <%- post_cells.each do |post_cell| %>
     <%= post_cell.show :post_is_the_page_subject => false %>
     <%- if posts.empty? %>
       <p class="usb-no-posts">
