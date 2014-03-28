@@ -2,7 +2,7 @@ module Blogocalypse
   class CommentsCell < Cell::Rails
     include Cell::Rails::ViewModel
 
-    def show(args = {})
+    def show
       return unless disqus_shortname
 
       render
