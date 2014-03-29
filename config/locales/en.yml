@@ -2,6 +2,8 @@ en:
   tags:
     tags: "Tags"
   posts:
+    all: "All Posts"
+    new: "New Post"
     none: "There are no posts just yet. Check back later!"
     saved: "Your post has been saved."
     not_saved: "There are some problems with your post."

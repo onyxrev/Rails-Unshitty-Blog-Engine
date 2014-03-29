@@ -4,6 +4,7 @@ require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'factory_girl_rails'
+require 'capybara/rspec'
 
 Rails.backtrace_cleaner.remove_silencers!
 
@@ -18,6 +19,7 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include Blogocalypse::Engine.routes.url_helpers
+  config.include Cell::TestCase::TestMethods
 
   Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each { |f| require f }
 end

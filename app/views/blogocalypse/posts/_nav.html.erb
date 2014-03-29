@@ -1,9 +1,9 @@
 <div class="usb-posts-nav">
-  <%= link_to "All Posts", posts_path, :class => "usb-posts" %>
+  <%= link_to t("posts.all"), posts_path, :class => "usb-posts" %>
 
   <% if can_create_post? %>
     <% unless current_page? new_post_path %>
-      <%= link_to "New Post", new_post_path, :class => "usb-new-post" %>
+      <%= link_to t("posts.new"), new_post_path, :class => "usb-new-post" %>
     <% end %>
   <% end %>
 </div>
