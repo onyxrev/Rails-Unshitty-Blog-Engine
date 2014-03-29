@@ -13,7 +13,11 @@ module Blogocalypse
         return nil
       end
 
-      context.send(Blogocalypse.current_user_method)
+      if context.respond_to?(Blogocalypse.current_user_method)
+        return context.send(Blogocalypse.current_user_method)
+      end
+
+      nil
     end
   end
 end

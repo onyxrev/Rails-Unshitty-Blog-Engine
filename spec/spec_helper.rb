@@ -17,5 +17,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Blogocalypse::Engine.routes.url_helpers
+
   Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each { |f| require f }
 end
