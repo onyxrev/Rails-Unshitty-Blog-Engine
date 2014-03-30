@@ -1,23 +1,31 @@
 module Blogocalypse
   module HostUser
     def host_user
-      # try to find the controller context
+      context = host_user_for_self || host_user_for_parent_controller
+
+      # return if we don't have a usable context
+      return unless context
+
+      return context.send(Blogocalypse.current_user_method)
+    end
+
+    private
+
+    # if we already have access to the host user method, return ourselves
+    def host_user_for_self
       if respond_to?(Blogocalypse.current_user_method)
-        # oh shit it's us!
-        context = self
-      elsif self.kind_of? Cell::Base and parent_controller
-        # cells usually have a parent controller
-        context = parent_controller
-      else
-        # ugh. no dice
-        return nil
+        return self
       end
+    end
 
-      if context.respond_to?(Blogocalypse.current_user_method)
-        return context.send(Blogocalypse.current_user_method)
+    # cells often have a parent_controller that has access to the current user method
+    def host_user_for_parent_controller
+      if kind_of? Cell::Base and
+        parent_controller and
+        parent_controller.respond_to?(Blogocalypse.current_user_method)
+
+        return parent_controller
       end
-
-      nil
     end
   end
 end
