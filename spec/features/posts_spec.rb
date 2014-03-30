@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "viewing the posts index" do
   before(:each) do
+    Blogocalypse.pagination_count = 10
+
     @posts = create_list(:post, 20).sort_by{ |p| p.published_at }.reverse
 
     visit posts_path
@@ -44,6 +46,8 @@ end
 
 describe "viewing the post page" do
   before(:each) do
+    Blogocalypse.disqus_shortname = "blogocalypse"
+
     @post = create(:post)
     visit post_path(@post)
   end
