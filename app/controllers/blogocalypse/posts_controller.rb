@@ -65,7 +65,7 @@ module Blogocalypse
     def posts
       return @posts if @posts
 
-      query = Post.all.order(:published_at => :desc).page(params[:page]).per(Blogocalypse.pagination_count)
+      query = Post.all.order(:published_at => :desc, :created_at => :desc).page(params[:page]).per(Blogocalypse.pagination_count)
 
       unless Blogocalypse.can.call host_user, :manage, Post
         query = query.where("published_at IS NOT NULL and published_at <= ?", Time.now)

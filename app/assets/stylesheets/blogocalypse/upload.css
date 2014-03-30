@@ -1,9 +1,3 @@
-.usb-image-uploader{
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
 .usb-image-uploader .spinner{
   display: none;
   position: absolute;

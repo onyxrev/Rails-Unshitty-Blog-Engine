@@ -1,10 +1,5 @@
-<h4 class="usb-pick-image-header usb-header"><%= t('images.pick') %></h4>
 <div class="usb-images-pick">
   <% image_cells.each do |cell| %>
     <%= cell.pick %>
-  <% end %>
-
-  <% if image_cells.empty? %>
-    <p><%= t('images.none') %></p>
   <% end %>
 </div>

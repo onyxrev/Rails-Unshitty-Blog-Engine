@@ -1,5 +1,5 @@
 <%- if can_create_post? %>
-  <div class="usb-actions">
+  <div class="usb-post-actions">
     <% unless current_page? @router.post_path(:id => model.slug) %>
       <%= link_to "View", @router.post_path(:id => model.slug), :class => "usb-view-post" %>
     <% end %>

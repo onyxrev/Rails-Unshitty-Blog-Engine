@@ -1,0 +1,165 @@
+@mixin document-flow{
+  h1, h2, h3, h4, h5, h6, h7, ul, ol{
+    margin-bottom: 1em;
+  }
+
+  h1{
+    font-size: 3em;
+  }
+
+  h2{
+    font-size: 2em;
+  }
+
+  h3{
+    font-size: 1.5em;
+  }
+
+  h4, h5, h6, h7{
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  ul, ol{
+    position: relative;
+    left: 1.5em;
+    padding-right: 1.5em;
+  }
+  
+  ul{
+    list-style-type: disc;
+  }
+
+  ol{
+    list-style-type: decimal;
+  }
+
+  img{
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  blockquote{
+    position: relative;
+    padding-left: 1.5em;
+    border-left: 1px solid #ccc;
+    margin-bottom: 1.5em;
+  }
+  
+  .pull-left{
+    float: left;
+  }
+
+  .pull-right{
+    float: right;
+  }
+}
+
+body{
+  background-color: #e3e3e3;
+}
+
+.usb-post{
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+
+  .usb-post-title{
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .usb-post-meta{
+    float: right;
+    background-color: #eee;
+    padding: 15px;
+    margin: 0 0 15px 15px;
+    max-width: 200px;
+
+    .usb-post-published-at{
+      font-style: italic;
+    }
+    
+    > * + *{
+      margin-top: .5em;
+    }
+  }
+
+  .usb-post-body{
+    @include document-flow;
+  }
+
+  form{
+    input[type="text"]{
+      min-width: 400px;
+    }
+
+    label[for="post_recreate_slug"]{
+      float: left;
+    }
+  }
+}
+
+.usb-post-tag-list{
+  dt{
+    font-weight: bold;
+    margin-bottom: .5em;
+  }
+
+  dd{
+    display: inline-block;
+    padding: 3px 7px;
+    background-color: #888;
+    color: white;
+    border-radius: 5px;
+  }
+}
+
+.usb-form-field{
+  margin-bottom: 1em;
+
+  label{
+    display: block;
+  }
+}
+
+.usb-posts-nav{
+  margin: 15px 0;
+}
+
+.usb-page{
+  width: 960px;
+  margin: 0 auto;
+}
+
+#usb_post_image_picker{
+  padding: 15px;
+
+  .usb-create-image-header{
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+
+  .usb-image-pick{
+    display: inline-block;
+    padding: 15px;
+    background-color: #e3e3e3;
+    margin-bottom: 1em;
+    
+    img{
+      width: 100%;
+    }
+
+    .usb-image-pick-actions{
+      text-align: center;
+    }
+  }
+}
+
+.usb-fullscreen{
+  .usb-fullscreen-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}

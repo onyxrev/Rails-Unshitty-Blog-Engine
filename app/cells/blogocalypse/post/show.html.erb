@@ -1,17 +1,20 @@
-<div class="usb-post">
-  <%= render :partial => "actions", :locals => { :model => model } %>
-  <%= post_title %>
+<div class="usb-post-show usb-post">
+  <div class="usb-post-meta">
+    <%= render :partial => "actions", :locals => { :model => model } %>
 
-  <div class="usb-post-published-at">
-    <%= published_at %>
+    <div class="usb-post-published-at">
+      <%= published_at %>
+    </div>
+
+    <%= tags_cell.show %>
   </div>
 
+  <%= post_title %>
   <div class="usb-post-body">
     <%== body_as_html %>
   </div>
 
   <%- if @post_is_the_page_subject %>
-    <%= tags_cell.show %>
     <%= comments_cell.show %>
   <%- end %>
 </div>

@@ -1,5 +1,8 @@
 <div class="usb-image-pick">
   <%= image_tag model.image.thumb('200x200#').url, :class => "usb-image-thumbnail" %>
-  <%= link_to "Insert", "javascript://", :class => "usb-image-insert", :data => { :id => model.id } %>
-  <%= link_to "Delete", @router.image_path(model), :class => "usb-image-delete" %>
+
+  <div class="usb-image-pick-actions">
+    <%= link_to "Insert", "javascript://", :class => "usb-image-insert", :data => { :id => model.id } %>
+    <%= link_to "Delete", @router.image_path(model), :class => "usb-image-delete" %>
+  </div>
 </div>

@@ -14,8 +14,6 @@ en:
   images:
     create: "Upload a new Image"
     add: "Add an Image"
-    pick: "Pick an Image"
-    none: "There are no images yet."
     upload: "Upload Image"
   helpers:
     label:
