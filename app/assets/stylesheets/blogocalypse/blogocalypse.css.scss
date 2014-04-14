@@ -36,6 +36,10 @@
 
   img{
     width: 100%;
+    margin-bottom: 2em;
+  }
+
+  p{
     margin-bottom: 1em;
   }
 
@@ -128,8 +132,11 @@ body{
 }
 
 .usb-page{
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 #usb_post_image_picker{
