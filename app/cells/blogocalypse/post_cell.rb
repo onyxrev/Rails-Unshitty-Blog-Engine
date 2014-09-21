@@ -44,7 +44,7 @@ module Blogocalypse
     end
 
     def tags_cell
-      @tags_cell ||= cell(Blogocalypse::Tags, model)
+      @tags_cell ||= cell(Blogocalypse::Tags, model.tags)
     end
 
     def images_cell

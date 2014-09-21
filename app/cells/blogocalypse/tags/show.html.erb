@@ -1,12 +1,6 @@
-<%- if (model.tags.present?) %>
+<%- if (model.present?) -%>
   <dl class="usb-post-tag-list">
-    <dt class="usb-post-tag-label">
-      <%= t("tags.tags") %>
-    </dt>
-    <%- model.tag_list.each do |tag| %>
-      <dd class="usb-post-tag">
-        <%= tag %>
-      </dd>
-    <%- end %>
+    <dt class="usb-post-tag-label"><%= t("tags.tags") %></dt>
+    <%- model.each do |tag| -%><dd class="usb-post-tag"><%= link_to tag.name, @router.post_tag_path(:id => tag.name) %></dd><%- end -%>
   </dl>
-<%- end %>
+<%- end -%>

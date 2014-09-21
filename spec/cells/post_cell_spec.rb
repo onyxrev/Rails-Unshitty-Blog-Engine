@@ -117,7 +117,7 @@ describe "Post Cell" do
     describe "#tags_cell" do
       it "returns a tags cell for the post's tags" do
         fake_tags_cell = double
-        Blogocalypse::PostCell.any_instance.should_receive(:cell).with(Blogocalypse::Tags, @post).and_return(fake_tags_cell)
+        Blogocalypse::PostCell.any_instance.should_receive(:cell).with(Blogocalypse::Tags, @post.tag_taggings).and_return(fake_tags_cell)
 
         @post_cell.tags_cell.should == fake_tags_cell
       end

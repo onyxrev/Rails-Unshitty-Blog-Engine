@@ -5,14 +5,14 @@
     <div class="usb-post-published-at">
       <%= published_at %>
     </div>
-
-    <%= tags_cell.show %>
   </div>
 
   <%= post_title %>
   <div class="usb-post-body">
     <%== body_as_html %>
   </div>
+
+  <%= tags_cell.show %>
 
   <%- if @post_is_the_page_subject %>
     <%= comments_cell.show %>

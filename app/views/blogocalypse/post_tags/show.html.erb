@@ -1,0 +1,15 @@
+<div id="usb_post_tags_page" class="usb-page">
+  <h1 class="usb-heading">Posts tagged with &quot;<%= @tag %>&quot;:</h1>
+
+  <%- if @posts_cell.posts.empty? %>
+    <p class="usb-no-tag-posts">
+      <%= t("tag_posts.none") %>
+    </p>
+  <%- end %>
+
+  <%= @posts_cell.show %>
+
+  <div class="usb-pagination">
+    <%= paginate @posts_cell.posts %>
+  </div>
+</div>
